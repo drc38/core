@@ -37,4 +37,7 @@ async def async_setup(hass: HomeAssistant, config: ConfigType) -> bool:
     hass.async_create_task(
         async_load_platform(hass, Platform.CLIMATE, DOMAIN, {}, config)
     )
+    hass.async_create_task(
+        async_load_platform(hass, Platform.WATER_HEATER, DOMAIN, {}, config)
+    )
     return True
