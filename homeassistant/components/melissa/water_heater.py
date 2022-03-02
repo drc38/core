@@ -89,7 +89,7 @@ class BobbieWaterHeater(WaterHeaterEntity):
         """Return current operation ie. eco, electric, performance, ..."""
         if self._status_data is None:
             self._attr_current_operation = STATE_UNKNOWN
-        elif self._status_data[ATTR_RELAY] is False:
+        elif self._status_data[ATTR_RELAY] == 0:
             self._attr_current_operation = STATE_OFF
         elif self._status_data[ATTR_LOAD] is False:
             # relay is on but cylinder is at setpoint, so no power flowing
